@@ -2,22 +2,22 @@
 
 namespace BinaryCats\LaravelTenant\Http\Middleware;
 
-use Closure;
-use BinaryCats\LaravelTenant\TenantManager;
 use BinaryCats\LaravelTenant\Exceptions\TenantExpection;
+use BinaryCats\LaravelTenant\TenantManager;
+use Closure;
 use Illuminate\Http\Request;
 
 class ValidateTenant
 {
     /**
-     * Bind implementation
+     * Bind implementation.
      *
      * @var BinaryCats\LaravelTenant\TenantManager
      */
     protected $tenantManager;
 
     /**
-     * Create new Middleware
+     * Create new Middleware.
      *
      * @param BinaryCats\LaravelTenant\TenantManager $tenantManager
      */
@@ -44,7 +44,7 @@ class ValidateTenant
     }
 
     /**
-     * Apply the Tenant to the scope
+     * Apply the Tenant to the scope.
      *
      * @param  \Illuminate\Http\Request $request
      * @return void
@@ -54,12 +54,12 @@ class ValidateTenant
         // if tenant is not valid:
         if (! $this->tenant($request)) {
             // and now
-            throw new TenantExpection("Tenant does not exist", 404);
+            throw new TenantExpection('Tenant does not exist', 404);
         }
     }
 
     /**
-     * Resolve Tenant
+     * Resolve Tenant.
      *
      * @param  \Illuminate\Http\Request $request
      * @return \BinaryCats\LaravelTenant\Models\Tenant
@@ -68,7 +68,7 @@ class ValidateTenant
     {
         return $this->tenantManager->findTenant(
             [
-            'domain' => $request->getSubdomain(),
+                'domain' => $request->getSubdomain(),
             ]
         );
     }

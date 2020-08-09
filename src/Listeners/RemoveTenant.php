@@ -13,7 +13,7 @@ class RemoveTenant
     protected $tenantManager;
 
     /**
-     * Create new Middleware
+     * Create new Middleware.
      *
      * @param BinaryCats\LaravelTenant\TenantManager $tenantManager
      */

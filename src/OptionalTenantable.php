@@ -2,8 +2,8 @@
 
 namespace BinaryCats\LaravelTenant;
 
-use BinaryCats\LaravelTenant\Eloquent\OptionalTenantableScope;
 use BinaryCats\LaravelTenant\Eloquent\Observers\TenantableObserver;
+use BinaryCats\LaravelTenant\Eloquent\OptionalTenantableScope;
 
 trait OptionalTenantable
 {

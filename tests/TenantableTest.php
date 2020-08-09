@@ -3,7 +3,6 @@
 namespace BinaryCats\LaravelTenant\Tests;
 
 use BinaryCats\LaravelTenant\Eloquent\Tenant;
-use BinaryCats\LaravelTenant\Tests\TenantableModel;
 use Illuminate\Support\Facades\Auth;
 
 class TenantableTest extends TestCase
@@ -16,9 +15,7 @@ class TenantableTest extends TestCase
     }
 
     /**
-     * 
-     *
-     * @test 
+     * @test
      */
     public function without_authentication_it_will_select_all()
     {
@@ -46,9 +43,7 @@ class TenantableTest extends TestCase
     }
 
     /**
-     * 
-     *
-     * @test 
+     * @test
      */
     public function with_authentication_it_will_only_select_its_own()
     {

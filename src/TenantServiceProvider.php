@@ -7,14 +7,14 @@ use Illuminate\Support\AggregateServiceProvider;
 class TenantServiceProvider extends AggregateServiceProvider
 {
     /**
-     * Location of the provider
+     * Location of the provider.
      *
      * @var string
      */
     protected $path = __DIR__;
 
     /**
-     * Name of the package
+     * Name of the package.
      *
      * @var string
      */
@@ -45,7 +45,7 @@ class TenantServiceProvider extends AggregateServiceProvider
     }
 
     /**
-     * Register the service provider
+     * Register the service provider.
      *
      * @return void
      */
@@ -67,7 +67,7 @@ class TenantServiceProvider extends AggregateServiceProvider
     }
 
     /**
-     * Merge the config for the repo
+     * Merge the config for the repo.
      *
      * @return $this
      */
@@ -79,7 +79,7 @@ class TenantServiceProvider extends AggregateServiceProvider
     }
 
     /**
-     * Publish config for the repo
+     * Publish config for the repo.
      *
      * @return $this
      */
@@ -87,7 +87,7 @@ class TenantServiceProvider extends AggregateServiceProvider
     {
         $this->publishes(
             [
-            "{$this->path}/../config/{$this->name}.php" => config_path("{$this->name}.php")
+                "{$this->path}/../config/{$this->name}.php" => config_path("{$this->name}.php"),
             ], 'config'
         );
 
@@ -95,7 +95,7 @@ class TenantServiceProvider extends AggregateServiceProvider
     }
 
     /**
-     * Publish Migrations, Seeders and Factories
+     * Publish Migrations, Seeders and Factories.
      *
      * @return $this
      */
@@ -103,12 +103,10 @@ class TenantServiceProvider extends AggregateServiceProvider
     {
         $this->publishes(
             [
-            "{$this->path}/../database" => database_path(),
+                "{$this->path}/../database" => database_path(),
             ], 'migrations'
         );
 
         return $this;
     }
-
-
 }

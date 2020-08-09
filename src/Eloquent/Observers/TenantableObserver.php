@@ -21,7 +21,7 @@ class TenantableObserver extends Observer
     }
 
     /**
-     * Try to obtain the tenant instance and set the value
+     * Try to obtain the tenant instance and set the value.
      *
      * @return int | null
      */
@@ -31,7 +31,7 @@ class TenantableObserver extends Observer
     }
 
     /**
-     * Resolve manager
+     * Resolve manager.
      *
      * @return BinaryCats\Hood\TenantManager
      */

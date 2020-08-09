@@ -2,15 +2,15 @@
 
 namespace BinaryCats\LaravelTenant\Providers;
 
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\ServiceProvider;
 
 class BlueprintMacros extends ServiceProvider
 {
     /**
-     * List new methods for Blade compiler
+     * List new methods for Blade compiler.
      *
-     * @var Array
+     * @var array
      */
     protected $methods = [
         'tenant',
@@ -39,7 +39,7 @@ class BlueprintMacros extends ServiceProvider
     }
 
     /**
-     * Add a tenant directive to Blueprint
+     * Add a tenant directive to Blueprint.
      *
      * @return void
      */

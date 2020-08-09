@@ -2,10 +2,10 @@
 
 namespace BinaryCats\LaravelTenant\Eloquent;
 
-use BinaryCats\LaravelTenant\TenantManager;
-use Illuminate\Database\Eloquent\Model;
 use BinaryCats\LaravelTenant\Contracts\TenantableScope as Scope;
+use BinaryCats\LaravelTenant\TenantManager;
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
+use Illuminate\Database\Eloquent\Model;
 
 class TenantableScope implements Scope
 {
@@ -29,9 +29,9 @@ class TenantableScope implements Scope
     }
 
     /**
-     * Allow for an extra conditions
+     * Allow for an extra conditions.
      *
-     * @return boolean
+     * @return bool
      */
     public function bypass()
     {
@@ -55,7 +55,7 @@ class TenantableScope implements Scope
     }
 
     /**
-     * Resolve the ID of the tenant
+     * Resolve the ID of the tenant.
      *
      * @return BinaryCats\Hood\Tenant
      */

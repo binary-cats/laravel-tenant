@@ -1,9 +1,9 @@
 <?php
 
 use BinaryCats\LaravelTenant\Seeders\TenantStatusSeeder;
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateTenantStatusesTable extends Migration
 {
@@ -23,7 +23,7 @@ class CreateTenantStatusesTable extends Migration
 
         Artisan::call('db:seed', [
             '--class' => TenantStatusSeeder::class,
-            '--force' => true
+            '--force' => true,
         ]);
     }
 
@@ -38,7 +38,7 @@ class CreateTenantStatusesTable extends Migration
     }
 
     /**
-     * Resolve Table name from config
+     * Resolve Table name from config.
      *
      * @return
      */

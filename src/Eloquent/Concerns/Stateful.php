@@ -18,13 +18,13 @@ trait Stateful
     {
         static::observe(
             [
-            TenantStatusObserver::class,
+                TenantStatusObserver::class,
             ]
         );
     }
 
     /**
-     * Return the value of the field to which the comparison needs to be made
+     * Return the value of the field to which the comparison needs to be made.
      *
      * @return string
      */
@@ -34,7 +34,7 @@ trait Stateful
     }
 
     /**
-     * Resolve the Status field Name
+     * Resolve the Status field Name.
      *
      * @return string
      */
@@ -44,7 +44,7 @@ trait Stateful
     }
 
     /**
-     * Decorate the Status label
+     * Decorate the Status label.
      *
      * @return string
      */

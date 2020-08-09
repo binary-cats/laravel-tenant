@@ -29,7 +29,7 @@ class TenantStatus extends Model implements TenantStateful
     ];
 
     /**
-     * Return the value of the field to which the comparison needs to be made
+     * Return the value of the field to which the comparison needs to be made.
      *
      * @return string
      */
@@ -39,7 +39,7 @@ class TenantStatus extends Model implements TenantStateful
     }
 
     /**
-     * Return the field to which the comparison needs to be made
+     * Return the field to which the comparison needs to be made.
      *
      * @return string
      */
@@ -49,11 +49,11 @@ class TenantStatus extends Model implements TenantStateful
     }
 
     /**
-     * Status may have many Tenant Records
+     * Status may have many Tenant Records.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function tenants() : HasMany
+    public function tenants(): HasMany
     {
         return $this->hasMany(config('tenant.models.tenant'));
     }

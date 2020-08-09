@@ -18,7 +18,7 @@ class TenantStatusObserver
     }
 
     /**
-     * Set initial status value
+     * Set initial status value.
      *
      * @param \Illuminate\Database\Eloquent\Model $tenant
      */
@@ -30,7 +30,7 @@ class TenantStatusObserver
     }
 
     /**
-     * Get the tenant status
+     * Get the tenant status.
      *
      * @param  \Illuminate\Database\Eloquent\Model $tenant
      * @return int

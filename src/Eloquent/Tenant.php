@@ -37,32 +37,32 @@ class Tenant extends Model implements TenantStateful
     ];
 
     /**
-     * Record belongs to a Status
+     * Record belongs to a Status.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function tenantStatus() : BelongsTo
+    public function tenantStatus(): BelongsTo
     {
         return $this->belongsTo(config('tenant.models.tenant_status'));
     }
 
     /**
-     * Will resolve the model's accessibles
+     * Will resolve the model's accessibles.
      *
      * @param  Illuminate\Database\Eloquent\Model $model
-     * @return boolean
+     * @return bool
      */
     public function hasModel(Model $model)
     {
         return $this->morphedByMany($model->getMorphClass(), 'model', config('tenant.tables.tenantable'))->exists(
             [
-            $model->getKeyName() => $model->getKey()
+                $model->getKeyName() => $model->getKey(),
             ]
         );
     }
 
     /**
-     * Get the value for the domain
+     * Get the value for the domain.
      *
      * @return string
      */
@@ -72,11 +72,11 @@ class Tenant extends Model implements TenantStateful
     }
 
     /**
-     * Get the value for the domain
+     * Get the value for the domain.
      *
-     * @return boolean
+     * @return bool
      */
-    public function isSuperTenant() : bool
+    public function isSuperTenant(): bool
     {
         return Str::is($this->getKey(), tenantManager()->getSuperTenantKey());
     }

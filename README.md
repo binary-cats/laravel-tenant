@@ -1,5 +1,9 @@
 # A Simple Laravel Tenancy
 
+![https://github.com/binary-cats/laravel-tenant/actions](https://github.com/binary-cats/laravel-tenant/workflows/PHP%20Composer/badge.svg)
+![https://github.styleci.io/repos/266611306](https://github.styleci.io/repos/266611306/shield)
+![https://scrutinizer-ci.com/g/binary-cats/laravel-mailgun-webhooks/](https://scrutinizer-ci.com/g/binary-cats/laravel-tenant/badges/quality-score.png?b=master)
+
 This Laravel package allows you to drop-in multi-tenancy. It is a little opinionated and you are free to update and tinker with it.
 
 <img src="resources/img/laravel-tenant.png" alt="Laravel Tenant" width="200"/>

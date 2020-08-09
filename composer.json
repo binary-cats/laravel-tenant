@@ -1,0 +1,68 @@
+{
+    "name": "binary-cats/laravel-tenant",
+    "description": "A Laravel package to add tenants to your application.",
+    "keywords": [
+        "binary-cats",
+        "laravel",
+        "tenancy",
+        "tenant"
+    ],
+    "license": "MIT",
+    "homepage": "https://github.org/binary-cats/laravel-tenant",
+    "authors": [
+        {
+            "name": "Cyrill N Kalita",
+            "email": "cyrill.kalita@gmail.com",
+            "homepage": "https://github.org/binary-cats",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "illuminate/support": "^7.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^5.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "3.0-dev"
+        },
+        "laravel": {
+            "providers": [
+                "BinaryCats\\LaravelTenant\\TenantServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "BinaryCats\\LaravelTenant\\": "src/"
+        },
+        "files": [
+            "src/Helpers/functions.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "BinaryCats\\LaravelTenant\\Tests\\": "tests"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "test": "vendor/bin/phpunit --color=always",
+        "check": [
+            "php-cs-fixer fix --ansi --dry-run --diff src",
+            "php-cs-fixer fix --ansi --dry-run --diff tests",
+            "phpcs -p --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 --report-width=200 --report-summary  --report-full src tests --standard=PSR2 -n",
+            "phpmd src,tests text codesize,unusedcode,naming --ignore-violations-on-exit"
+        ],
+        "fix": [
+            "phpcbf -p --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests"
+        ]
+    }
+}

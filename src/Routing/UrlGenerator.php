@@ -2,13 +2,12 @@
 
 namespace BinaryCats\LaravelTenant\Routing;
 
-use Illuminate\Support\Arr;
 use Illuminate\Routing\UrlGenerator as BaseUrlGenerator;
 
 class UrlGenerator extends BaseUrlGenerator
 {
     /**
-     * Name of the subdomain key
+     * Name of the subdomain key.
      *
      * @var string
      */
@@ -38,14 +37,14 @@ class UrlGenerator extends BaseUrlGenerator
         if ($subdomain = $this->getSubdomain()) {
             return $this->defaults(
                 [
-                $this->subdomainKey() => $subdomain
+                    $this->subdomainKey() => $subdomain,
                 ]
             );
         }
     }
 
     /**
-     * Get subdomain from route
+     * Get subdomain from route.
      *
      * @return string | null
      */
@@ -55,7 +54,7 @@ class UrlGenerator extends BaseUrlGenerator
     }
 
     /**
-     * Resolve the parameter from route
+     * Resolve the parameter from route.
      *
      * @return string
      */
@@ -65,7 +64,7 @@ class UrlGenerator extends BaseUrlGenerator
     }
 
     /**
-     * Get Default Subsomain
+     * Get Default Subsomain.
      *
      * @return string | null
      */
@@ -77,11 +76,11 @@ class UrlGenerator extends BaseUrlGenerator
     }
 
     /**
-     * Return the subdomain key
+     * Return the subdomain key.
      *
      * @return string
      */
-    protected function subdomainKey() : string
+    protected function subdomainKey(): string
     {
         return empty($this->subdomainKey) ? config('tenant.routing.subdomainKey') : $this->subdomainKey;
     }

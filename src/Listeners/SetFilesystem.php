@@ -13,7 +13,7 @@ class SetFilesystem
     protected $tenantManager;
 
     /**
-     * Create new Middleware
+     * Create new Middleware.
      *
      * @param BinaryCats\LaravelTenant\TenantManager $tenantManager
      */
@@ -34,7 +34,7 @@ class SetFilesystem
     }
 
     /**
-     * Dynamically add a file system
+     * Dynamically add a file system.
      *
      * @param App\User $user
      */
@@ -44,14 +44,14 @@ class SetFilesystem
         // Set the disk to be default?
         config(
             [
-            $this->filesystemConfigKey() => $this->filesystemConfig(),
-            'medialibrary.disk_name' => $this->key(),
+                $this->filesystemConfigKey() => $this->filesystemConfig(),
+                'medialibrary.disk_name' => $this->key(),
             ]
         );
     }
 
     /**
-     * Key to use for the disks and resets
+     * Key to use for the disks and resets.
      *
      * @return string
      */
@@ -61,7 +61,7 @@ class SetFilesystem
     }
 
     /**
-     * Make the filesustem key to use
+     * Make the filesustem key to use.
      *
      * @return string
      */
@@ -71,7 +71,7 @@ class SetFilesystem
     }
 
     /**
-     * Protected filesystem
+     * Protected filesystem.
      *
      * @return array
      */
@@ -79,13 +79,13 @@ class SetFilesystem
     {
         return array_merge(
             $this->defaultFilesystemConfig(), [
-            'root' => $this->key(),
+                'root' => $this->key(),
             ]
         );
     }
 
     /**
-     * Collect default configuration
+     * Collect default configuration.
      *
      * @return array
      */

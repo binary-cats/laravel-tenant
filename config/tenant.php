@@ -11,10 +11,10 @@ return [
 
     'models' => [
 
-        # Eloquent Model responsible for the Tenant Record
+        // Eloquent Model responsible for the Tenant Record
         'tenant' => \BinaryCats\LaravelTenant\Eloquent\Tenant::class,
 
-        # Eloquent Model responsible for the Tenant Status Record
+        // Eloquent Model responsible for the Tenant Status Record
         'tenant_status' => \BinaryCats\LaravelTenant\Eloquent\TenantStatus::class,
     ],
 
@@ -27,12 +27,12 @@ return [
     */
 
     'scopes' => [
-       # If you do not need additional scoping controls, you can keep this value empty
-       # and BinaryCats\LaravelTenant\Eloquent\TenantableScope will be used
+        // If you do not need additional scoping controls, you can keep this value empty
+        // and BinaryCats\LaravelTenant\Eloquent\TenantableScope will be used
         'required' => null,
 
-        # If you do not need additional scoping controls, you can keep this value empty
-        # and BinaryCats\LaravelTenant\Eloquent\OptionalTenantableScope will be used
+        // If you do not need additional scoping controls, you can keep this value empty
+        // and BinaryCats\LaravelTenant\Eloquent\OptionalTenantableScope will be used
         'optional' => null,
     ],
 
@@ -73,15 +73,15 @@ return [
     */
    'routing' => [
 
-        # Set `autobind` to true to ensure it is resolved automatically
-        'autobind' => true,
+       // Set `autobind` to true to ensure it is resolved automatically
+       'autobind' => true,
 
-        # Set `subdomainKey` to the name of the parameter to bind
-        'subdomainKey' => 'account',
+       // Set `subdomainKey` to the name of the parameter to bind
+       'subdomainKey' => 'account',
 
-        # If you need to replace the URL generator with yet another
-        # Must be implemeting Illuminate\Contracts\Routing\UrlGenerator
-        'generator' => \BinaryCats\LaravelTenant\Routing\UrlGenerator::class,
+       // If you need to replace the URL generator with yet another
+       // Must be implemeting Illuminate\Contracts\Routing\UrlGenerator
+       'generator' => \BinaryCats\LaravelTenant\Routing\UrlGenerator::class,
    ],
 
    /*
@@ -93,13 +93,13 @@ return [
     */
     'tables' => [
 
-        # Name of the table for the Tenant model
+        // Name of the table for the Tenant model
         'tenant' => 'tenants',
 
-        # Name of the table for the Tenant Status model
+        // Name of the table for the Tenant Status model
         'tenant_status' => 'tenant_statuses',
 
-        # Name of the table to store plural tenant relations for owning multiple tenants
+        // Name of the table to store plural tenant relations for owning multiple tenants
         'tenantable' => 'tenantables',
     ],
 

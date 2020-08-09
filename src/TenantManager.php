@@ -3,7 +3,6 @@
 namespace BinaryCats\LaravelTenant;
 
 use BinaryCats\LaravelTenant\Eloquent\TenantableScope;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Scope;
 use Illuminate\Support\Traits\Macroable;
@@ -13,28 +12,28 @@ class TenantManager
     use Macroable;
 
     /**
-     * Tenant record
+     * Tenant record.
      *
      * @var Illuminate\Database\Eloquent\Model
      */
     protected $tenant;
 
     /**
-     * List of models where loading is deferred
+     * List of models where loading is deferred.
      *
      * @var Illuminate\Support\Collection
      */
     protected $deferredModels;
 
     /**
-     * Define what scope to User
+     * Define what scope to User.
      *
      * @var string
      */
     protected $scope = TenantableScope::class;
 
     /**
-     * Create new TenantManager
+     * Create new TenantManager.
      */
     public function __construct()
     {
@@ -55,7 +54,7 @@ class TenantManager
     }
 
     /**
-     * Return the tenant
+     * Return the tenant.
      *
      * @return Illuminate\Database\Eloquent\Model
      */
@@ -65,7 +64,7 @@ class TenantManager
     }
 
     /**
-     * Set Scope value
+     * Set Scope value.
      *
      * @param string $scope
      */
@@ -77,11 +76,11 @@ class TenantManager
     }
 
     /**
-     * Get Scope value
+     * Get Scope value.
      *
      * @param Illuminate\Database\Eloquent\Scope;
      */
-    public function getScope() : Scope
+    public function getScope(): Scope
     {
         // Fetch the scope
         $scope = $this->scope ?: config('tenant.scopes.required');
@@ -90,7 +89,7 @@ class TenantManager
     }
 
     /**
-     * UUID of the Tenant
+     * UUID of the Tenant.
      *
      * @return UUID string | null
      */
@@ -110,11 +109,11 @@ class TenantManager
             return $model->addGlobalScope($this->getScope());
         }
         // Else, defer to a later stage
-        $this->deferredModels->put(get_class($model), [$model,$this->getScope()]);
+        $this->deferredModels->put(get_class($model), [$model, $this->getScope()]);
     }
 
     /**
-     * Apply the scope to the models that were booted before setting the Tenant
+     * Apply the scope to the models that were booted before setting the Tenant.
      *
      * @return void
      */
@@ -123,7 +122,7 @@ class TenantManager
         $this->deferredModels->each(
             function ($item) {
                 // Split the mode and scope
-                list($model, $scope) = $item;
+                [$model, $scope] = $item;
                 // apply model scope
                 $model->addGlobalScope($scope);
             }
@@ -131,7 +130,7 @@ class TenantManager
     }
 
     /**
-     * Resolve Model
+     * Resolve Model.
      *
      * @return Illuminate\Database\Eloquent\Model
      */
@@ -144,7 +143,7 @@ class TenantManager
     }
 
     /**
-     * Find a tenant based on the
+     * Find a tenant based on the.
      *
      * @return Illuminate\Database\Eloquent\Model
      */
@@ -154,7 +153,7 @@ class TenantManager
     }
 
     /**
-     * Fetch the ID of the super Tenant
+     * Fetch the ID of the super Tenant.
      *
      * @return int
      */

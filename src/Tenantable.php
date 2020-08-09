@@ -2,9 +2,9 @@
 
 namespace BinaryCats\LaravelTenant;
 
-use BinaryCats\LaravelTenant\Eloquent\TenantableScope;
 use BinaryCats\LaravelTenant\Eloquent\BelongsToTenant;
 use BinaryCats\LaravelTenant\Eloquent\Observers\TenantableObserver;
+use BinaryCats\LaravelTenant\Eloquent\TenantableScope;
 
 trait Tenantable
 {
@@ -43,7 +43,7 @@ trait Tenantable
     }
 
     /**
-     * Resolve the key for the tenant
+     * Resolve the key for the tenant.
      *
      * @return string
      */
@@ -53,7 +53,7 @@ trait Tenantable
     }
 
     /**
-     * Name of the key to look for
+     * Name of the key to look for.
      *
      * @return string
      */

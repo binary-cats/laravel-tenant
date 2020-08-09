@@ -2,20 +2,20 @@
 
 namespace BinaryCats\LaravelTenant\Seeders;
 
-use Illuminate\Database\Seeder;
 use BinaryCats\LaravelTenant\Contracts\TenantStateful;
+use Illuminate\Database\Seeder;
 
 class TenantStatusSeeder extends Seeder
 {
     /**
-     * Bind the implementation
+     * Bind the implementation.
      *
      * @var BinaryCats\LaravelTenant\Contracts\TenantStateful
      */
     protected $tenantStatus;
 
     /**
-     * Creat new Seeder
+     * Creat new Seeder.
      *
      * @return void
      */
@@ -25,7 +25,7 @@ class TenantStatusSeeder extends Seeder
     }
 
     /**
-     * Array of values to save
+     * Array of values to save.
      *
      * @var array
      */
@@ -71,7 +71,7 @@ class TenantStatusSeeder extends Seeder
             function ($record, $key) {
                 $this->tenantStatus->firstOrNew(
                     [
-                    $this->tenantStatus->getKeyName() => $key,
+                        $this->tenantStatus->getKeyName() => $key,
                     ]
                 )->fill($record)->save();
             }
@@ -81,7 +81,7 @@ class TenantStatusSeeder extends Seeder
     }
 
     /**
-     * Resolve the values
+     * Resolve the values.
      *
      * @return Illumiante\Support\Collection
      */

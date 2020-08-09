@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Scope;
 interface TenantableScope extends Scope
 {
     /**
-     * Allow for an extra condition
+     * Allow for an extra condition.
      *
-     * @return boolean
+     * @return bool
      */
     public function bypass();
 }

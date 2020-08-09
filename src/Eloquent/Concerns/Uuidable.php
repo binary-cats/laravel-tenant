@@ -24,11 +24,11 @@ trait Uuidable
     }
 
     /**
-     * Resolve UUID field name
+     * Resolve UUID field name.
      *
      * @return string
      */
-    public function getUuidFieldName() : string
+    public function getUuidFieldName(): string
     {
         return empty($this->uuidFieldName) ? 'uuid' : $this->uuidFieldName;
     }

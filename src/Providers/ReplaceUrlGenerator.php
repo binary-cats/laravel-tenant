@@ -23,7 +23,7 @@ class ReplaceUrlGenerator extends ServiceProvider
     }
 
     /**
-     * Override the UrlGenerator
+     * Override the UrlGenerator.
      *
      * @return void
      */

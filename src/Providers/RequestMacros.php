@@ -2,15 +2,15 @@
 
 namespace BinaryCats\LaravelTenant\Providers;
 
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Http\Request;
+use Illuminate\Support\ServiceProvider;
 
 class RequestMacros extends ServiceProvider
 {
     /**
-     * List new methods for Blade compiler
+     * List new methods for Blade compiler.
      *
-     * @var Array
+     * @var array
      */
     protected $methods = [
         'hasSubdomain',
@@ -24,13 +24,13 @@ class RequestMacros extends ServiceProvider
      */
     public function boot()
     {
-        foreach($this->methods as $directive){
+        foreach ($this->methods as $directive) {
             $this->{$directive}();
         }
     }
 
     /**
-     * True if the we have a subdomain
+     * True if the we have a subdomain.
      *
      * @return void
      */
@@ -53,7 +53,7 @@ class RequestMacros extends ServiceProvider
     }
 
     /**
-     * Resolve subdomain from the Request
+     * Resolve subdomain from the Request.
      *
      * @return void
      */

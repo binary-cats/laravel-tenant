@@ -13,7 +13,7 @@ class SetTenant
     protected $tenantManager;
 
     /**
-     * Create new Middleware
+     * Create new Middleware.
      *
      * @param BinaryCats\LaravelTenant\TenantManager $tenantManager
      */
@@ -34,7 +34,7 @@ class SetTenant
     }
 
     /**
-     * Resolve Tenant from Mamanger
+     * Resolve Tenant from Mamanger.
      *
      * @return $this
      */
@@ -45,7 +45,7 @@ class SetTenant
 
     /**
      * Set the tenant from the user;
-     * But we also need to boot the user again
+     * But we also need to boot the user again.
      *
      * @param  User $user
      * @return $this
@@ -59,7 +59,7 @@ class SetTenant
     }
 
     /**
-     * Reboot the models that are using Tenantable, but have not received the global scope yet
+     * Reboot the models that are using Tenantable, but have not received the global scope yet.
      *
      * @param  User $user
      * @return $this

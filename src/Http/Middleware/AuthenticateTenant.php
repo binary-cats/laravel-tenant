@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class AuthenticateTenant
 {
     /**
-     * Name of the guard to autneticate against
+     * Name of the guard to autneticate against.
      *
      * @var string
      */
@@ -33,7 +33,7 @@ class AuthenticateTenant
     }
 
     /**
-     * Fire authenticated event to set the Tenant globally
+     * Fire authenticated event to set the Tenant globally.
      *
      * @param  Illuminate\Contracts\Auth\Authenticatable $user
      * @return void

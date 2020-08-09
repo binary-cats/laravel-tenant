@@ -2,22 +2,22 @@
 
 namespace BinaryCats\LaravelTenant\Http\Middleware;
 
-use Closure;
-use BinaryCats\LaravelTenant\TenantManager;
 use BinaryCats\LaravelTenant\Exceptions\TenantExpection;
+use BinaryCats\LaravelTenant\TenantManager;
+use Closure;
 use Illuminate\Http\Request;
 
 class AuthorizeTenant
 {
     /**
-     * Bind implementation
+     * Bind implementation.
      *
      * @var BinaryCats\LaravelTenant\TenantManager
      */
     protected $tenantManager;
 
     /**
-     * Create new Middleware
+     * Create new Middleware.
      *
      * @param BinaryCats\LaravelTenant\TenantManager $tenantManager
      */
@@ -51,7 +51,7 @@ class AuthorizeTenant
     }
 
     /**
-     * Apply the Tenant to the scope
+     * Apply the Tenant to the scope.
      *
      * @param  \Illuminate\Http\Request $request
      * @return void
@@ -69,14 +69,14 @@ class AuthorizeTenant
                 $this->tenantManager->setTenant($tenant);
             }
             // we do not have access, throw 403
-            throw new TenantExpection("Access not allowed", 403);
+            throw new TenantExpection('Access not allowed', 403);
         } else {
-            throw new TenantExpection("Tenant does not exist", 404);
+            throw new TenantExpection('Tenant does not exist', 404);
         }
     }
 
     /**
-     * Resolve Tenant
+     * Resolve Tenant.
      *
      * @param  \Illuminate\Http\Request $request
      * @return \BinaryCats\LaravelTenant\Models\Tenant
@@ -85,13 +85,13 @@ class AuthorizeTenant
     {
         return $this->tenantManager->findTenant(
             [
-            'domain' => $request->getSubdomain(),
+                'domain' => $request->getSubdomain(),
             ]
         );
     }
 
     /**
-     * Forget the argument
+     * Forget the argument.
      *
      * @param  \Illuminate\Http\Request $request
      * @return void

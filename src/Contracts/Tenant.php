@@ -1,6 +1,6 @@
 <?php
 
-namespace BinaryCats\LaravelTenant\Contracts\Tenant;
+namespace BinaryCats\LaravelTenant\Contracts;
 
 interface Tenant
 {
